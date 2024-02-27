@@ -1,0 +1,37 @@
+{
+  "name": "member-front-react",
+  "private": true,
+  "version": "1.0.0",
+  "workspaces": {
+    "packages": [
+      "@apps/*",
+      "@packages/*"
+    ]
+  },
+  "scripts": {
+    "init": "npm run clear && npm i",
+    "clear": "bash ./clear.sh",
+    "admin:start": "npm run start -w @member/admin",
+    "admin:build": "npm run build -w @member/admin",
+    "admin:preview": "npm run preview -w @member/admin",
+    "local:start": "npm run start -w @@member/local",
+    "local:build": "npm run build -w @@member/local",
+    "local:preview": "npm run preview -w @@member/local"
+  },
+  "dependencies": {
+    "axios": "^0.27.2",
+    "jotai": "^2.4.1",
+    "less": "^4.1.3",
+    "lodash": "^4.17.21",
+    "qs": "^6.11.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-hook-form": "^7.33.1",
+    "react-query": "^3.39.1",
+    "react-router-dom": "^6.3.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.0.1",
+    "vite": "^4.4.0"
+  }
+}
