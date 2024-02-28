@@ -1,7 +1,15 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { CssBaseline, ThemeProvider } from '@mui/material';
+import theme from './theme';
+import GlobalStyles from './theme/GlobalStyles';
+
 const App = () => {
     return (
-        <div>Hello world</div>
+        <ThemeProvider theme={theme}>
+            <GlobalStyles />
+            <CssBaseline />
+            hahaha
+        </ThemeProvider>
     )
 }
 

@@ -19,6 +19,10 @@
     "local:preview": "npm run preview -w @@member/local"
   },
   "dependencies": {
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.0",
+    "@mui/icons-material": "^5.15.11",
+    "@mui/material": "^5.15.11",
     "axios": "^0.27.2",
     "jotai": "^2.4.1",
     "less": "^4.1.3",

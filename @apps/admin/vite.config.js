@@ -12,7 +12,9 @@ export default defineConfig({
       '@': path.resolve(__dirname, './src'),
     },
   },
-  plugins: [react()],
+  plugins: [react({
+    jsxImportSource: '@emotion/react',
+  })],
   esbuild: {
     logOverride: { 'this-is-undefined-in-esm': 'silent' },
   },
