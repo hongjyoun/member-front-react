@@ -1,4 +1,5 @@
 import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react'
 import path from "path";
 
 // https://vitejs.dev/config/
@@ -11,9 +12,7 @@ export default defineConfig({
       '@': path.resolve(__dirname, './src'),
     },
   },
-  plugins: [
-
-  ],
+  plugins: [react()],
   esbuild: {
     logOverride: { 'this-is-undefined-in-esm': 'silent' },
   },
