@@ -1,8 +1,10 @@
+import Layout from '@/components/layout/Layout';
+
 const Tables = () => {
     return (
-        <div>
+        <Layout>
             <h1>Tables</h1>
-        </div>
+        </Layout>
     );
 }
 
