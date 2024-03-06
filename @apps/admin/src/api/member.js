@@ -7,10 +7,9 @@ const getBySearchParams = async (params) => {
         url: `api/members/search`,
         params: {nameOrId:"홍지연"},
     }))
-    console.log(result);
     return result
 }
 
 export const useGetBySearchParams = () => {
-    return useQuery({ queryKey: ['LIST'], queryFn: getBySearchParams()});
+    return useQuery({ queryKey: ['LIST'], queryFn: getBySearchParams});
 }
