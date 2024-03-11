@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import Layout from '@/components/layout/Layout';
-import { DataGrid } from '@mui/x-data-grid';
+import { Space, Table, Tag } from 'antd';
+import AppLayout from '@/components/layout/AppLayout';
 import { useGetBySearchParams } from '@/api/member';
 
 const Tables = () => {
@@ -8,27 +8,42 @@ const Tables = () => {
     console.log(data ? data.data : "no data");
 
     const columns = [
-        { field: 'center', headerName: '센터', width: 150, valueGetter: (params) => `${params.row.center.name}` },
-        { field: 'lastName', headerName: 'Last name', width: 130, sortable: false, description: 'This column has a value getter and is not sortable.'},
-        { field: 'firstName', headerName: 'First name', width: 130, sortable: false, },
-        { field: 'level', headerName: '현재과정', width: 130, sortable: false, valueGetter: (params) => `${params.row.levelProgress.level.name}`},
+        {
+            title: 'ID',
+            dataIndex: 'id',
+        },
+        {
+            title: 'Name',
+            dataIndex: 'firstName',
+            render: (firstName) => <a>{firstName}</a>,
+        },
+        {
+            title: '센터',
+            dataIndex: 'center',
+            render: (center) => <a>{center?.name}</a>,
+        },
+        {
+            title: '현재과정',
+            dataIndex: 'levelProgress',
+            render: (lp) => <a>{lp?.level?.name}</a>,
+        },
+
     ];
 
     const rows = data ? data.data : []
 
+    const [tableParams, setTableParams] = useState({
+        pagination: {
+            current: 1,
+            pageSize: 20,
+        },
+    });
+
     return (
-        <Layout>
+        <AppLayout>
             <h1>Tables</h1>
-            <DataGrid
-                rows={rows}
-                columns={columns}
-                initialState={{
-                    pagination: { paginationModel: { page: 0, pageSize: 10 }, },
-                }}
-                pageSizeOptions={[5, 10]}
-                checkboxSelection
-            />
-        </Layout>
+            <Table columns={columns} dataSource={rows} pagination={tableParams.pagination}/>;
+        </AppLayout>
     );
 }
 

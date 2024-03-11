@@ -1,11 +1,11 @@
-import Layout from '@/components/layout/Layout';
+import AppLayout from '@/components/layout/AppLayout';
 
 const Home = () => {
     return (
-        <Layout>
+        <AppLayout>
             <h1>Home</h1>
             Hello :r) Click the menu on the left to see the tables.
-        </Layout>
+        </AppLayout>
     );
 }
 

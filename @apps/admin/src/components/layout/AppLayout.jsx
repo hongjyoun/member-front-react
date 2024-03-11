@@ -1,11 +1,11 @@
 import SideBar from "@/components/menu/SideBar";
-import './Layout.less';
+import './AppLayout.less';
 
-const Layout = ({ children }) => {
+const AppLayout = ({ children }) => {
     return <div className="layout">
         <SideBar />
         <div className="content">{children}</div>
     </div>
 }
 
-export default Layout;
+export default AppLayout;
