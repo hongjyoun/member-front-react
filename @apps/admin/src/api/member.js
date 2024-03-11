@@ -5,7 +5,7 @@ const getBySearchParams = async (params) => {
     const result = (await axios({
         method: "GET",
         url: `api/members/search`,
-        params: {nameOrId:"홍지연"},
+        params: {nameOrId:"김", centerId:29},
     }))
     return result
 }
