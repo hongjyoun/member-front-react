@@ -12,5 +12,5 @@ const getBySearchParams = async (params) => {
 }
 
 export const useGetBySearchParams = () => {
-    return useQuery({ queryKey: ['LIST'], queryFn: getBySearchParams});
+    return useQuery({ queryKey: ['LIST'], queryFn: getBySearchParams })
 }

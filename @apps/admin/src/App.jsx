@@ -4,7 +4,14 @@ import AppRouter from './routes/AppRouter';
 import theme from './theme';
 import GlobalStyles from './theme/GlobalStyles';
 
-const queryClient = new QueryClient();
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      staleTime: 1000 * 60,
+      cacheTime: 1000 * 60 * 5,
+    }
+  },
+});
 
 const App = () => {
   return <QueryClientProvider client={queryClient}>
