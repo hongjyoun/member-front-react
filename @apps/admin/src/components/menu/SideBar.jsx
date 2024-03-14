@@ -23,11 +23,14 @@ const SideBar = () => {
                 <ListItemText primary="Home"/>
               </ListItemButton>
             </ListItem>
-            <ListItem disablePadding>
-              <ListItemButton component={Link} to="/tables">
-                <ListItemText primary="Tables"/>
-              </ListItemButton>
-            </ListItem>
+            {
+              authService.isAuthenticated() &&
+              <ListItem disablePadding>
+                <ListItemButton component={Link} to="/tables">
+                  <ListItemText primary="Tables"/>
+                </ListItemButton>
+              </ListItem>
+            }
           </List>
         </nav>
         <div className="loginButton">

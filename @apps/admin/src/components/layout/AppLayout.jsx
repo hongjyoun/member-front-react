@@ -1,11 +1,21 @@
 import SideBar from '@/components/menu/SideBar';
 import './AppLayout.less';
+import GuestView from '@/components/common/GuestView';
+import KeycloakService from '@/module/keycloak';
 
 const AppLayout = ({ children }) => {
-  return <div className="layout">
-    <SideBar/>
-    <div className="content">{children}</div>
-  </div>;
+  const authService = new KeycloakService();
+
+  return (
+    <div className="layout">
+      <SideBar/>
+      {
+        authService.isAuthenticated()
+          ? <div className="content">{children}</div>
+          : <GuestView/>
+      }
+    </div>
+  )
 };
 
 export default AppLayout;

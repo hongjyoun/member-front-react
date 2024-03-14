@@ -40,10 +40,10 @@ const Tables = () => {
   });
 
   return (
-    <AppLayout>
+    <>
       <h1>Tables</h1>
-      <Table columns={columns} dataSource={rows} pagination={tableParams.pagination}/>;
-    </AppLayout>
+      <Table columns={columns} dataSource={rows} pagination={tableParams.pagination}/>
+    </>
   );
 };
 
