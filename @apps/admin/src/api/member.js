@@ -7,6 +7,7 @@ const getBySearchParams = async (params) => {
         url: `api/members/search`,
         params: {nameOrId:"김", centerId:29},
     }))
+    console.log('result', result);
     return result
 }
 

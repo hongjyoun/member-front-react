@@ -8,26 +8,10 @@ const Tables = () => {
   console.log(data ? data.data : 'no data');
 
   const columns = [
-    {
-      title: 'ID',
-      dataIndex: 'id',
-    },
-    {
-      title: 'Name',
-      dataIndex: 'firstName',
-      render: (firstName) => <a>{firstName}</a>,
-    },
-    {
-      title: '센터',
-      dataIndex: 'center',
-      render: (center) => <a>{center?.name}</a>,
-    },
-    {
-      title: '현재과정',
-      dataIndex: 'levelProgress',
-      render: (lp) => <a>{lp?.level?.name}</a>,
-    },
-
+    { title: 'ID', dataIndex: 'id', key: 'id' },
+    { title: 'Name', dataIndex: 'firstName', key: 'name', render: (firstName) => <a>{firstName}</a> },
+    { title: '센터', dataIndex: 'center', key: 'center', render: (center) => <a>{center?.name}</a> },
+    { title: '현재과정', dataIndex: 'levelProgress', key:'level', render: (lp) => <a>{lp?.level?.name}</a> },
   ];
 
   const rows = data ? data.data : [];
@@ -42,7 +26,7 @@ const Tables = () => {
   return (
     <>
       <h1>Tables</h1>
-      <Table columns={columns} dataSource={rows} pagination={tableParams.pagination}/>
+      <Table columns={columns} dataSource={rows} pagination={tableParams.pagination} rowKey="id"/>
     </>
   );
 };
