@@ -2,6 +2,7 @@ import axios from "@/api"
 import { useQuery } from '@tanstack/react-query'
 
 const getBySearchParams = async (params) => {
+    console.log('params', params)
     const result = (await axios({
         method: "GET",
         url: `api/members/search`,
@@ -12,5 +13,5 @@ const getBySearchParams = async (params) => {
 }
 
 export const useGetBySearchParams = (params) => {
-    return useQuery({ queryKey: ['MEMBER_LIST'], queryFn: () => getBySearchParams(params) })
+    return useQuery({ queryKey: ['MEMBER_LIST', params], queryFn: () => getBySearchParams(params) })
 }
