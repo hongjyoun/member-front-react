@@ -5,12 +5,12 @@ const getBySearchParams = async (params) => {
     const result = (await axios({
         method: "GET",
         url: `api/members/search`,
-        params: {nameOrId:"김", centerId:29},
+        params,
     }))
     console.log('result', result);
     return result
 }
 
-export const useGetBySearchParams = () => {
-    return useQuery({ queryKey: ['LIST'], queryFn: getBySearchParams })
+export const useGetBySearchParams = (params) => {
+    return useQuery({ queryKey: ['MEMBER_LIST'], queryFn: () => getBySearchParams(params) })
 }

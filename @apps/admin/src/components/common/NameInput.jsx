@@ -1,9 +1,10 @@
 import { Input } from 'antd';
 
-const NameInput = ({ placeholder, name, setName }) => {
+const NameInput = ({ isLoading, placeholder, name, setName }) => {
+  const handleChange = (e) => setName(e.target.value);
   return (
     <div>
-      <Input placeholder={placeholder}  value={name} onChange={(e) => setName(e)} />
+      <Input placeholder={placeholder} disabled={isLoading === true}  value={name} onChange={handleChange} />
     </div>
   );
 }
