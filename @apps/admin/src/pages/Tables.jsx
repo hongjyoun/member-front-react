@@ -23,7 +23,6 @@ const Tables = () => {
 
   const handlePagination = (page, size) => {
     const changedPagination = { ...pagination, current: page, pageSize: size }
-    console.log('changedPagination', changedPagination);
     setPagination(changedPagination);
   };
 
