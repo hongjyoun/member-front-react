@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import NameInput from '@/components/common/NameInput';
 import { Button } from 'antd';
 
-const MemberFilter = ({ isLoading, refetch, onChange, name }) => {
-  const onClickSearch = async () => await refetch();
-  const handleName = (value) => onChange(value);
+const MemberFilter = ({ isLoading, name, onChange, onSearch }) => {
+  const onClickSearch = () => onSearch();
+  const handleName = (value) => onChange({ name: value });
 
   return <>
     <div style={{ display: 'flex' }}>
