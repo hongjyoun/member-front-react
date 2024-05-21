@@ -11,10 +11,10 @@
   "scripts": {
     "init": "npm run clear && npm i",
     "clear": "bash ./clear.sh",
-    "admin:start": "npm run start -w @member/admin",
+    "admin:dev": "npm run start -w @member/admin",
     "admin:build": "npm run build -w @member/admin",
     "admin:preview": "npm run preview -w @member/admin",
-    "local:start": "npm run start -w @@member/local",
+    "local:dev": "npm run start -w @@member/local",
     "local:build": "npm run build -w @@member/local",
     "local:preview": "npm run preview -w @@member/local"
   },
