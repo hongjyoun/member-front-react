@@ -8,10 +8,17 @@
   transition: background-color 0.3s ease;
   cursor: pointer;
   font-size: 18px;
-  display: flex;
-  gap: 4px;
-  justify-content: center;
-  align-items: center;
+
+  .button-content {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    justify-content: start;
+
+    &.center {
+      justify-content: center;
+    }
+  }
 
   .icon {
     margin-top: 2px;

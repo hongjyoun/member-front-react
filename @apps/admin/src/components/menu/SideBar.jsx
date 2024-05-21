@@ -11,12 +11,12 @@ const SideBar = () => {
           <MdCloudCircle size={28}/>
           <span className="titleText">Cloud storage</span>
         </div>
-        <Button isFullWidth color="primary" label="Create" icon={MdOutlineAdd} />
+        <Button isFullWidth color="primary" label="Create" icon={MdOutlineAdd} align="center"/>
         <ul>
-          <li><MenuItem isFullWidth color="black" label="Dashboard" icon={MdDashboard} /></li>
-          <li><MenuItem isFullWidth color="black" label="shared" icon={MdFolderShared} /></li>
-          <li><MenuItem isFullWidth color="black" label="Favorite" icon={MdOutlineFavorite} /></li>
-          <li><MenuItem isFullWidth color="black" label="Deleted files" icon={MdDelete} /></li>
+          <li><Button isFullWidth color="black" label="Dashboard" icon={MdDashboard} /></li>
+          <li><Button isFullWidth color="black" label="shared" icon={MdFolderShared} /></li>
+          <li><Button isFullWidth color="black" label="Favorite" icon={MdOutlineFavorite} /></li>
+          <li><Button isFullWidth color="black" label="Deleted files" icon={MdDelete} /></li>
         </ul>
       </div>
     </div>
