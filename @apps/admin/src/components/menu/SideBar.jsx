@@ -1,6 +1,6 @@
 import "./SideBar.less";
 import Button from '@/components/common/Button';
-import { MdOutlineAdd, MdCloudCircle, MdDashboard, MdFolderShared, MdOutlineFavorite, MdDelete } from 'react-icons/md';
+import { MdAdd, MdCloudCircle, MdDashboard, MdFolderShared, MdOutlineFavorite, MdDelete } from 'react-icons/md';
 
 const SideBar = () => {
   return (
@@ -10,7 +10,7 @@ const SideBar = () => {
           <MdCloudCircle size={28}/>
           <span className="titleText">Cloud storage</span>
         </div>
-        <Button isFullWidth color="primary" label="Create" icon={MdOutlineAdd} align="center"/>
+        <Button isFullWidth color="primary" label="Create" icon={MdAdd} align="center"/>
         <ul>
           <li><Button isFullWidth color="black" label="Dashboard" icon={MdDashboard} /></li>
           <li><Button isFullWidth color="black" label="shared" icon={MdFolderShared} /></li>
