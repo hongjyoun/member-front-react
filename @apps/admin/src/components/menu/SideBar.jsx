@@ -1,20 +1,22 @@
 import "./SideBar.less";
 import Button from '@/components/common/Button';
-import { MdOutlineAdd } from 'react-icons/md';
+import { MdOutlineAdd, MdCloudCircle, MdDashboard, MdFolderShared, MdOutlineFavorite, MdDelete } from 'react-icons/md';
+import MenuItem from '@/components/common/MenuItem';
 
 const SideBar = () => {
   return (
     <div className="sidebar">
       <div className="upSection">
-        <div className="title roboto-medium">Cloud storage</div>
+        <div className="title roboto-medium">
+          <MdCloudCircle size={28}/>
+          <span className="titleText">Cloud storage</span>
+        </div>
         <Button isFullWidth color="primary" label="Create" icon={MdOutlineAdd} />
         <ul>
-          <li></li>
-          <li>Shared</li>
-          <li>Favorite</li>
-          <li>shared</li>
-          <li>Deleted files</li>
-          <li>Settings</li>
+          <li><MenuItem isFullWidth color="black" label="Dashboard" icon={MdDashboard} /></li>
+          <li><MenuItem isFullWidth color="black" label="shared" icon={MdFolderShared} /></li>
+          <li><MenuItem isFullWidth color="black" label="Favorite" icon={MdOutlineFavorite} /></li>
+          <li><MenuItem isFullWidth color="black" label="Deleted files" icon={MdDelete} /></li>
         </ul>
       </div>
     </div>
