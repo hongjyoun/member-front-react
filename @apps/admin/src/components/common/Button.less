@@ -1,0 +1,46 @@
+@import '@/assets/main.less';
+
+.custom-button {
+  border: none;
+  padding: 10px;
+  border-radius: 10px;
+  height: 48px;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+  font-size: 18px;
+  display: flex;
+  gap: 4px;
+  justify-content: center;
+  align-items: center;
+
+  .icon {
+    margin-top: 2px;
+  }
+}
+
+.custom-button-primary {
+  background-color: @primary;
+  color: @white;
+}
+
+.custom-button-primary:hover {
+  background-color: darken(@primary, 10%);
+}
+
+.custom-button-black {
+  background-color: @black;
+  color: @white;
+}
+
+.custom-button-black:hover {
+  background-color: lighten(@black, 20%);
+}
+
+.custom-button-white {
+  background-color: @white;
+  color: @black;
+}
+
+.custom-button-white:hover {
+  background-color: darken(@white, 20%);
+}

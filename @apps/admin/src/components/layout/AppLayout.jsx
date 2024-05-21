@@ -1,6 +1,6 @@
 import SideBar from '@/components/menu/SideBar';
 import './AppLayout.less';
-import GuestView from '@/components/common/GuestView';
+import GuestView from '@/pages/GuestView/GuestView';
 import KeycloakService from '@/module/keycloak';
 
 const AppLayout = ({ children }) => {
