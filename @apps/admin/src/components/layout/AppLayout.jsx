@@ -1,16 +1,21 @@
+import { useEffect, useState } from 'react';
 import SideBar from '@/components/menu/SideBar';
 import './AppLayout.less';
 import GuestView from '@/pages/GuestView/GuestView';
 import KeycloakService from '@/module/keycloak';
 
 const AppLayout = ({ children }) => {
-  const authService = new KeycloakService();
+  const [authService, setAuthService] = useState(null);
+
+  useEffect(() => {
+    setAuthService(new KeycloakService());
+  }, []);
 
   return (
     <div className="layout">
       <SideBar/>
       {
-        authService.isAuthenticated()
+        authService && authService.isAuthenticated()
           ? <div className="content">{children}</div>
           : <GuestView/>
       }

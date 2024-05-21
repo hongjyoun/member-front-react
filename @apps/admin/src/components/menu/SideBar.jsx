@@ -1,7 +1,6 @@
 import "./SideBar.less";
 import Button from '@/components/common/Button';
 import { MdOutlineAdd, MdCloudCircle, MdDashboard, MdFolderShared, MdOutlineFavorite, MdDelete } from 'react-icons/md';
-import MenuItem from '@/components/common/MenuItem';
 
 const SideBar = () => {
   return (
