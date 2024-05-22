@@ -1,5 +1,5 @@
 import "./SideBar.less";
-import Button from '@/components/common/Button';
+import Button from '@/components/common/button/Button';
 import { MdAdd, MdCloudCircle, MdDashboard, MdFolderShared, MdOutlineFavorite, MdDelete } from 'react-icons/md';
 import KeycloakService from '@/module/keycloak';
 

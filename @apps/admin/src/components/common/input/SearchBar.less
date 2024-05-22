@@ -1,0 +1,26 @@
+@import "@/assets/vars.less";
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  background-color: @outline;
+  padding: 8px;
+  width: 400px;
+  border-radius: 8px;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+}
+
+.search-icon {
+  margin-right: 8px;
+}
+
+.search-input {
+  background: none;
+  border: none;
+  outline: none;
+  height: 32px;
+  width: 90%;
+}

@@ -8,6 +8,16 @@
     "left-top right-top"
     "left-content right-content";
   height: 100%;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 100%;
+    grid-template-rows: auto auto auto auto;
+    grid-template-areas:
+      "left-top"
+      "right-top"
+      "left-content"
+      "right-content";
+  }
 }
 
 .left-top {
