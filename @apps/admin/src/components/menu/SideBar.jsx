@@ -17,16 +17,16 @@ const SideBar = () => {
         </div>
         <Button isFullWidth color="primary" label="Create" icon={MdAdd} align="center"/>
         <ul>
-          <li><Button isFullWidth color="black" label="Dashboard" icon={MdDashboard} /></li>
-          <li><Button isFullWidth color="black" label="shared" icon={MdFolderShared} /></li>
-          <li><Button isFullWidth color="black" label="Favorite" icon={MdOutlineFavorite} /></li>
-          <li><Button isFullWidth color="black" label="Deleted files" icon={MdDelete} /></li>
+          <li><Button isFullWidth thin color="black" label="Dashboard" icon={MdDashboard} /></li>
+          <li><Button isFullWidth thin color="black" label="shared" icon={MdFolderShared} /></li>
+          <li><Button isFullWidth thin color="black" label="Favorite" icon={MdOutlineFavorite} /></li>
+          <li><Button isFullWidth thin color="black" label="Deleted files" icon={MdDelete} /></li>
         </ul>
       </div>
       <div className="downSection">
         <div className="greyBox">
           {authService && !authService.isAuthenticated() && <Button isFullWidth color="white" label="Login" align="center" onClick={onclickLogin} />}
-          {authService && authService.isAuthenticated() && <Button isFullWidth color="white" label="Logout" align="center"onClick={onclickLogout} />}
+          {authService && authService.isAuthenticated() && <Button isFullWidth color="white" label="Logout" align="center" onClick={onclickLogout} />}
         </div>
       </div>
     </div>
