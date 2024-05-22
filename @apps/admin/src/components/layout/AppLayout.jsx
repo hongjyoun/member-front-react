@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import SideBar from '@/components/menu/SideBar';
 import './AppLayout.less';
-import GuestView from '@/pages/GuestView/GuestView';
+import GuestView from '@/pages/guest/GuestView';
 import KeycloakService from '@/module/keycloak';
 
 const AppLayout = ({ children }) => {

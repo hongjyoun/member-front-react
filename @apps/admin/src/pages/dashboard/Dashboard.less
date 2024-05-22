@@ -1,0 +1,35 @@
+@import '@/assets/main.less';
+
+.dashboard {
+  display: grid;
+  grid-template-columns: 70% 30%;
+  grid-template-rows: 15% 85%;
+  grid-template-areas:
+    "left-top right-top"
+    "left-content right-content";
+  height: 100%;
+}
+
+.left-top {
+  grid-area: left-top;
+  border-right: 1px solid @outline;
+  border-bottom: 1px solid @outline;
+}
+
+.right-top {
+  grid-area: right-top;
+  border-left: 1px solid @outline;
+  border-bottom: 1px solid @outline;
+}
+
+.left-content {
+  grid-area: left-content;
+  border-right: 1px solid @outline;
+  border-top: 1px solid @outline;
+}
+
+.right-content {
+  grid-area: right-content;
+  border-left: 1px solid @outline;
+  border-top: 1px solid @outline;
+}
