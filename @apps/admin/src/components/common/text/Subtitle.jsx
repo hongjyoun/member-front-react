@@ -1,7 +1,7 @@
 import './Subtitle.less';
 
-const Subtitle = ({ title }) => {
-  return <span className="subtitle">{title}</span>;
+const Subtitle = ({ children }) => {
+  return <span className="subtitle">{children}</span>;
 }
 
 export default Subtitle;

@@ -10,7 +10,7 @@ const Dashboard = () => {
         <Block><SearchBar /></Block>
       </div>
       <div className="right-top">asdasd</div>
-      <div className="left-content"><Block><Subtitle title="Recently edited" /></Block></div>
+      <div className="left-content"><Block><Subtitle>Recently edited</Subtitle></Block></div>
       <div className="right-content">Right Content</div>
     </div>
   );

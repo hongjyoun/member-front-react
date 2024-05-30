@@ -1,15 +1,39 @@
-import React, { useState } from 'react';
-import NameInput from '@/components/common/NameInput';
+import React, { useReducer, useState } from 'react';
 import { Button } from 'antd';
+import LabeledTextInput from '@/components/common/input/LabeledTextInput';
+import './MemberFilter.less';
 
-const MemberFilter = ({ isLoading, name, onChange, onSearch }) => {
-  const onClickSearch = () => onSearch();
-  const handleName = (value) => onChange({ name: value });
+const filterNames = ['nameOrId', 'birthday', 'fromAge', 'toAge', 'gender'];
+
+const initialFilterState = {
+  nameOrId: '',
+  birthday: '',
+  fromAge: '',
+  toAge: '',
+  gender: '',
+}
+
+const MemberFilter = ({ isLoading, onSearch }) => {
+  const [filterState, setFilterState] = useState(initialFilterState);
+  const handleInputChange = (e) => {
+    setFilterState(prevState => ({ ...prevState, [e.target.name]: e.target.value }));
+  };
+  const onClickSearch = () => {
+    if(onSearch) onSearch(filterState);
+  };
 
   return <>
-    <div style={{ display: 'flex' }}>
-      <NameInput placeholder="이름을 입력하세요" name={name} setName={handleName} isLoading={isLoading}/>
-      <Button type="primary" onClick={onClickSearch}>검색</Button>
+    <div className="member-filter">
+      {filterNames.map(filterName => (
+        <LabeledTextInput
+          key={filterName}
+          label={filterName}
+          placeholder={filterName}
+          onChange={handleInputChange}
+          isLoading={isLoading}
+        />
+      ))}
+      <Button type="primary" onClick={() => onClickSearch()}>검색</Button>
     </div>
   </>
 }

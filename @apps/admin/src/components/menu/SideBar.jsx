@@ -1,9 +1,12 @@
 import "./SideBar.less";
 import Button from '@/components/common/button/Button';
-import { MdAdd, MdCloudCircle, MdDashboard, MdFolderShared, MdOutlineFavorite, MdDelete } from 'react-icons/md';
+import { MdAdd, MdCloudCircle } from 'react-icons/md';
 import KeycloakService from '@/module/keycloak';
+import { sideMenus } from '@/constants/menu';
+import { useNavigate } from 'react-router-dom';
 
 const SideBar = () => {
+  const navigate = useNavigate();
   const authService = new KeycloakService();
   const onclickLogin = () => { authService.login(); };
   const onclickLogout = async () => { await authService.logout(); };
@@ -17,14 +20,13 @@ const SideBar = () => {
         </div>
         <Button isFullWidth color="primary" label="Create" icon={MdAdd} align="center"/>
         <ul>
-          <li><Button isFullWidth thin color="black" label="Dashboard" icon={MdDashboard} /></li>
-          <li><Button isFullWidth thin color="black" label="shared" icon={MdFolderShared} /></li>
-          <li><Button isFullWidth thin color="black" label="Favorite" icon={MdOutlineFavorite} /></li>
-          <li><Button isFullWidth thin color="black" label="Deleted files" icon={MdDelete} /></li>
+          { sideMenus.map((menu, index) => {
+            return <li key={index}><Button isFullWidth thin color="black" label={menu.name} icon={menu.icon} onClick={() => navigate(menu.path)}/></li>
+          }) }
         </ul>
       </div>
       <div className="downSection">
-        <div className="greyBox">
+      <div className="greyBox">
           {authService && !authService.isAuthenticated() && <Button isFullWidth color="white" label="Login" align="center" onClick={onclickLogin} />}
           {authService && authService.isAuthenticated() && <Button isFullWidth color="white" label="Logout" align="center" onClick={onclickLogout} />}
         </div>
