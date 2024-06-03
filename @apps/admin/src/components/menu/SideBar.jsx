@@ -1,9 +1,11 @@
 import "./SideBar.less";
-import Button from '@/components/common/button/Button';
-import { MdAdd, MdCloudCircle } from 'react-icons/md';
 import KeycloakService from '@/module/keycloak';
-import { sideMenus } from '@/constants/menu';
+import Button from '@/components/common/button/Button';
+import { MdPermIdentity } from 'react-icons/md';
+import { menuItems } from '@/constants/menu';
 import { useNavigate } from 'react-router-dom';
+import { Avatar, Badge, Menu } from 'antd';
+import { useState } from 'react';
 
 const SideBar = () => {
   const navigate = useNavigate();
@@ -11,19 +13,37 @@ const SideBar = () => {
   const onclickLogin = () => { authService.login(); };
   const onclickLogout = async () => { await authService.logout(); };
 
+  const [theme, setTheme] = useState('light');
+  const [current, setCurrent] = useState('1');
+
+  const changeTheme = (value) => {
+    setTheme(value ? 'dark' : 'light');
+  };
+
+  const onClickMenu = (e) => {
+    console.log('menuItems', menuItems);
+    setCurrent(e.key);
+    const menuItem = menuItems.find(item => item.key === e.key);
+    if (menuItem && menuItem.path) navigate(menuItem.path);
+  }
+
   return (
     <div className="sidebar">
       <div className="upSection">
         <div className="title roboto-medium">
-          <MdCloudCircle size={28}/>
-          <span className="titleText">Cloud storage</span>
+          <Badge count={1} offset={[-3,3]}>
+            <Avatar size={42} icon={<MdPermIdentity />} />
+          </Badge>
         </div>
-        <Button isFullWidth color="primary" label="Create" icon={MdAdd} align="center"/>
-        <ul>
-          { sideMenus.map((menu, index) => {
-            return <li key={index}><Button isFullWidth thin color="black" label={menu.name} icon={menu.icon} onClick={() => navigate(menu.path)}/></li>
-          }) }
-        </ul>
+        <Menu
+          theme={theme}
+          onClick={onClickMenu}
+          style={{ width: 256 }}
+          defaultOpenKeys={['manage-employee', 'manage-member', 'manage-center', 'manage-notice']}
+          selectedKeys={[current]}
+          mode="inline"
+          items={menuItems}
+        />
       </div>
       <div className="downSection">
       <div className="greyBox">
