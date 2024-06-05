@@ -1,6 +1,6 @@
+import './AvatarProfile.less';
 import { Avatar, Badge } from 'antd';
 import { MdPermIdentity } from 'react-icons/md';
-import './AvatarProfile.less';
 import { useContext } from 'react';
 import { AuthContext } from '@/provider/AuthProvider';
 

@@ -16,7 +16,7 @@ const ManageMenu = () => {
     <Menu
       onClick={onClickMenu}
       style={{ width: 256 }}
-      defaultOpenKeys={['manage-employee', 'manage-member', 'manage-center', 'manage-notice']}
+      defaultOpenKeys={['manage-employee']}
       selectedKeys={[current]}
       mode="inline"
       items={menuItems}
