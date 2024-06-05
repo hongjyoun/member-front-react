@@ -2,6 +2,7 @@ import { menuItems } from '@/constants/menu';
 import { Menu } from 'antd';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import './ManageMenu.less';
 
 const ManageMenu = () => {
   const navigate = useNavigate();
@@ -15,10 +16,10 @@ const ManageMenu = () => {
   return (
     <Menu
       onClick={onClickMenu}
-      style={{ width: 256 }}
-      defaultOpenKeys={['manage-employee']}
+      className='manage-menu'
+      // defaultOpenKeys={['manage-employee']}
       selectedKeys={[current]}
-      mode="inline"
+      mode="horizontal"
       items={menuItems}
     />
   )

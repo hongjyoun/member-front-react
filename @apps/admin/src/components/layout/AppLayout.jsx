@@ -1,6 +1,6 @@
 import './AppLayout.less';
 import { useEffect, useState } from 'react';
-import SideBar from '@/components/layout/SideBar';
+import HeaderBar from '@/components/layout/HeaderBar';
 import GuestView from '@/pages/guest/GuestView';
 import KeycloakService from '@/module/keycloak';
 
@@ -13,7 +13,7 @@ const AppLayout = ({ children }) => {
 
   return (
     <div className="layout">
-      <SideBar/>
+      <HeaderBar/>
       {
         authService && authService.isAuthenticated()
           ? <div className="content">{children}</div>

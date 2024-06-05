@@ -1,18 +1,16 @@
-import "./SideBar.less";
+import "./HeaderBar.less";
 import AvatarProfile from '@/components/common/profile/AvatarProfile';
 import ManageMenu from '@/components/menu/ManageMenu';
 import LoginButton from '@/components/button/LoginButton';
 
-const SideBar = () => {
+const HeaderBar = () => {
   return (
-    <div className="sidebar">
-      <div>
-        <AvatarProfile />
-        <ManageMenu />
-      </div>
+    <div className="headerBar">
+      <AvatarProfile />
+      <ManageMenu />
       <LoginButton />
     </div>
   )
 }
 
-export default SideBar;
+export default HeaderBar;

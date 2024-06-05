@@ -1,16 +1,16 @@
-import Button from '@/components/common/button/Button';
 import { useContext } from 'react';
 import { AuthContext } from '@/provider/AuthProvider';
+import { Button } from 'antd';
 
 const LoginButton = () => {
   const { login, logout, authService } = useContext(AuthContext);
   const onclickLogin = () => login();
   const onclickLogout = async () => logout();
 
-  return <>
-    {authService && !authService.isAuthenticated() && <Button isFullWidth color="white" label="Login" align="center" onClick={onclickLogin} />}
-    {authService && authService.isAuthenticated() && <Button isFullWidth color="white" label="Logout" align="center" onClick={onclickLogout} />}
-  </>
+  return <div style={{textAlign: 'end'}}>
+    {authService && !authService.isAuthenticated() && <Button small onClick={onclickLogin}>Login</Button>}
+    {authService && authService.isAuthenticated() && <Button onClick={onclickLogout}>Logout</Button>}
+  </div>
 }
 
 export default LoginButton;
