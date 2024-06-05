@@ -1,6 +1,6 @@
 import './AppLayout.less';
 import { useEffect, useState } from 'react';
-import SideBar from '@/components/menu/SideBar';
+import SideBar from '@/components/layout/SideBar';
 import GuestView from '@/pages/guest/GuestView';
 import KeycloakService from '@/module/keycloak';
 

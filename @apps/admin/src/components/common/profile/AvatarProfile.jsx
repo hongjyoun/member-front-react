@@ -1,8 +1,11 @@
 import { Avatar, Badge } from 'antd';
 import { MdPermIdentity } from 'react-icons/md';
 import './AvatarProfile.less';
+import { useContext } from 'react';
+import { AuthContext } from '@/provider/AuthProvider';
 
-const AvatarProfile = ({ user }) => {
+const AvatarProfile = () => {
+  const { user } = useContext(AuthContext);
   const userName = user && user.member ? user.member.fullName : 'Guest';
   const userPermission = user && user.permissionProfile ? user.permissionProfile.nameKr : '';
   return (
