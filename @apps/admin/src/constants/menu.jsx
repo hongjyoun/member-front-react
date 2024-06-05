@@ -1,5 +1,5 @@
 import { MdOutlinePortrait, MdOutlinePublic, MdManageSearch, MdOutlineFolder } from 'react-icons/md';
-import { MANAGE_CENTER, MANAGE_EMPLOYEE, MANAGE_MEMBER } from '@/routes/manage';
+import { MANAGE_CENTER, MANAGE_EMPLOYEE, MANAGE_MEMBER } from '@/routes/ManageRoutes';
 
 export const menuItems = [
   {

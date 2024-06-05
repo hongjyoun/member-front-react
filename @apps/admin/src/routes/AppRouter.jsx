@@ -1,7 +1,7 @@
 import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
 import Dashboard from '@/pages/dashboard/Dashboard';
 import AppLayout from '@/components/layout/AppLayout';
-import { MANAGE_ROUTES } from '@/routes/manage';
+import { MANAGE_ROUTES } from '@/routes/ManageRoutes';
 
 const AppRouter = () => {
   const renderRoutes = [
